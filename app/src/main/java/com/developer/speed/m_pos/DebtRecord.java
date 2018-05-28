@@ -22,6 +22,5 @@ public class DebtRecord extends AppCompatActivity
         debtRecycle=findViewById(R.id.debt_recycler);
         debtRecycle.setHasFixedSize(true);
         debtRecycle.setLayoutManager(new LinearLayoutManager(this));
-
     }
 }

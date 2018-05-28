@@ -60,3 +60,4 @@ public class DebtRecordAdapter extends RecyclerView.Adapter<DebtRecordAdapter.De
         return myDebtInformation.size();
     }
 }
+

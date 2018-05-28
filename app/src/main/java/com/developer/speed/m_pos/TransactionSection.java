@@ -26,3 +26,4 @@ public class TransactionSection extends AppCompatActivity
         transactRecycle.setLayoutManager(new LinearLayoutManager(this));
     }
 }
+

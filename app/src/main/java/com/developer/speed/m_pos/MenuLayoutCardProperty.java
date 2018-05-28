@@ -19,3 +19,4 @@ public class MenuLayoutCardProperty
         this.menuItem = menuItem;
     }
 }
+

@@ -99,3 +99,4 @@ public class NavigationBar extends AppCompatActivity
         return true;
     }
 }
+

@@ -44,3 +44,4 @@ public class DebtRecordProperty
         this.debtDate = debtDate;
     }
 }
+

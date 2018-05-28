@@ -31,6 +31,7 @@ public class MainMenu extends AppCompatActivity
         menuList.add(new MenuLayoutCardProperty("Premium"));
         menuAdapter=new MenuLayoutAdapter(this,menuList);
         menuRecycler.setAdapter(menuAdapter);
+
     }
 
 }

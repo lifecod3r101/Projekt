@@ -60,6 +60,7 @@ public class DebtRecordItemAdapter extends RecyclerView.Adapter<DebtRecordItemAd
         });
     }
 
+
     @Override
     public int getItemCount()
     {

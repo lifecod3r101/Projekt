@@ -62,5 +62,4 @@ public class MenuLayoutAdapter extends RecyclerView.Adapter<MenuLayoutAdapter.Me
         }
     }
 
-
 }

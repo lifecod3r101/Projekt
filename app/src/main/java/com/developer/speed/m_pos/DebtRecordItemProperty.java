@@ -46,7 +46,7 @@ public class DebtRecordItemProperty
 
     public double getDebtRecordItemPrice()
     {
-        return debtRecordItemPrice;
+        return this.debtRecordItemPrice;
     }
 
     public void setDebtRecordItemPrice(double debtRecordItemPrice)
@@ -54,3 +54,4 @@ public class DebtRecordItemProperty
         this.debtRecordItemPrice = debtRecordItemPrice;
     }
 }
+
