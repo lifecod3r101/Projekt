@@ -51,24 +51,19 @@
         android:layout_marginLeft="32dp"
         android:textAlignment="center"
         android:textSize="45dp"/>
-    <TableRow
-        android:id="@+id/button_wrap"
+
+    <Button
+        android:id="@+id/next_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp">
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/next_item"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
-            android:padding="45dp"/>
+        android:layout_marginRight="32dp"
+        android:text="Next Item" />
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/complete_transaction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="120dp"
-            android:padding="45dp"/>
-    </TableRow>
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="50dp" />
 </LinearLayout>
 

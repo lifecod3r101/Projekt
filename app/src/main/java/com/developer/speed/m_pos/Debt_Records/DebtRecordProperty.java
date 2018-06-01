@@ -1,4 +1,4 @@
-package com.developer.speed.m_pos;
+package com.developer.speed.m_pos.Debt_Records;
 
 import java.util.Date;
 
@@ -16,7 +16,7 @@ public class DebtRecordProperty
 
     public String getDebtName()
     {
-        return debtName;
+        return this.debtName;
     }
 
     public void setDebtName(String debtName)
@@ -26,7 +26,7 @@ public class DebtRecordProperty
 
     public int getDebtPhone()
     {
-        return debtPhone;
+        return this.debtPhone;
     }
 
     public void setDebtPhone(int debtPhone)
@@ -36,7 +36,7 @@ public class DebtRecordProperty
 
     public Date getDebtDate()
     {
-        return debtDate;
+        return this.debtDate;
     }
 
     public void setDebtDate(Date debtDate)

@@ -1,4 +1,4 @@
-package com.developer.speed.m_pos;
+package com.developer.speed.m_pos.Debt_Items;
 
 public class DebtRecordItemProperty
 {
@@ -16,7 +16,7 @@ public class DebtRecordItemProperty
 
     public String getDebtRecordItemCode()
     {
-        return debtRecordItemCode;
+        return this.debtRecordItemCode;
     }
 
     public void setDebtRecordItemCode(String debtRecordItemCode)
@@ -26,7 +26,7 @@ public class DebtRecordItemProperty
 
     public String getDebtRecordItemName()
     {
-        return debtRecordItemName;
+        return this.debtRecordItemName;
     }
 
     public void setDebtRecordItemName(String debtRecordItemName)
@@ -36,7 +36,7 @@ public class DebtRecordItemProperty
 
     public int getDebtRecordItemQuantity()
     {
-        return debtRecordItemQuantity;
+        return this.debtRecordItemQuantity;
     }
 
     public void setDebtRecordItemQuantity(int debtRecordItemQuantity)
@@ -46,7 +46,7 @@ public class DebtRecordItemProperty
 
     public double getDebtRecordItemPrice()
     {
-        return this.debtRecordItemPrice;
+        return debtRecordItemPrice;
     }
 
     public void setDebtRecordItemPrice(double debtRecordItemPrice)

@@ -1,6 +1,4 @@
-package com.developer.speed.m_pos;
-
-import android.icu.text.SimpleDateFormat;
+package com.developer.speed.m_pos.Transactions;
 
 import java.util.Date;
 
@@ -10,7 +8,7 @@ public class TransactionProperties {
     private Double transactionCost;
 
     public String getTransactionCode() {
-        return transactionCode;
+        return this.transactionCode;
     }
 
     public void setTransactionCode(String transactionCode) {
@@ -18,7 +16,7 @@ public class TransactionProperties {
     }
 
     public Date getTransactionDate() {
-        return transactionDate;
+        return this.transactionDate;
     }
 
     public void setTransactionDate(Date transactionDate) {
@@ -26,7 +24,7 @@ public class TransactionProperties {
     }
 
     public Double getTransactionCost() {
-        return transactionCost;
+        return this.transactionCost;
     }
 
     public void setTransactionCost(Double transactionCost) {

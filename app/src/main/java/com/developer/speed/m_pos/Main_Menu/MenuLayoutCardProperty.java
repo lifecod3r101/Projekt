@@ -1,4 +1,4 @@
-package com.developer.speed.m_pos;
+package com.developer.speed.m_pos.Main_Menu;
 
 public class MenuLayoutCardProperty
 {
@@ -11,7 +11,7 @@ public class MenuLayoutCardProperty
 
     public String getMenuItem()
     {
-        return menuItem;
+        return this.menuItem;
     }
 
     public void setMenuItem(String menuItem)
