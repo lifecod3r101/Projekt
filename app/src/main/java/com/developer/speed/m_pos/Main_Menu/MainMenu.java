@@ -5,8 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.developer.speed.m_pos.R.id;
-import com.developer.speed.m_pos.R.layout;
+import com.developer.speed.m_pos.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,19 +21,47 @@ public class MainMenu extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        this.setContentView(layout.menu_layout_recycler);
-        this.menuList = new ArrayList<>();
-        this.menuRecycler = this.findViewById(id.menu_recycler);
-        this.menuRecycler.setHasFixedSize(true);
-        this.menuRecycler.setLayoutManager(new LinearLayoutManager(this));
-        this.menuList.add(new MenuLayoutCardProperty("Sell"));
-        this.menuList.add(new MenuLayoutCardProperty("Debts"));
-        this.menuList.add(new MenuLayoutCardProperty("Items"));
-        this.menuList.add(new MenuLayoutCardProperty("Transactions"));
-        this.menuList.add(new MenuLayoutCardProperty("Premium"));
-        this.menuAdapter = new MenuLayoutAdapter(this, this.menuList);
-        this.menuRecycler.setAdapter(this.menuAdapter);
-
+        setContentView(R.layout.menu_layout_recycler);
+        menuList = new ArrayList<>();
+        menuRecycler = findViewById(R.id.menu_recycler);
+        menuRecycler.setHasFixedSize(true);
+        menuRecycler.setLayoutManager(new LinearLayoutManager(this));
+        menuList.add(new MenuLayoutCardProperty("Sell"));
+        menuList.add(new MenuLayoutCardProperty("Debts"));
+        menuList.add(new MenuLayoutCardProperty("Items"));
+        menuList.add(new MenuLayoutCardProperty("Transactions"));
+        menuList.add(new MenuLayoutCardProperty("Premium"));
+        menuAdapter = new MenuLayoutAdapter(this, menuList);
+        menuRecycler.setAdapter(menuAdapter);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

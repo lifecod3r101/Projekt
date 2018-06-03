@@ -44,5 +44,6 @@
         android:text="Account Unavailable? Tap here to create one"
         android:textColor="@color/colorPrimaryDark"
         android:textAlignment="center"/>
+
 </LinearLayout>
 

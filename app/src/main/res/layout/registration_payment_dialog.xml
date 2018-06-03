@@ -52,7 +52,7 @@
                 android:layout_below="@id/basic_text"
                 android:layout_marginLeft="11dp"
                 android:layout_toRightOf="@id/basic_radio"
-                android:text="Use The Point Of Sale System Only without anything extra" />
+                android:text="Use The Point Of Sale System without anything extra" />
 
         </RelativeLayout>
 
@@ -83,7 +83,7 @@
                 android:layout_below="@id/premium_text"
                 android:layout_marginLeft="11dp"
                 android:layout_toRightOf="@id/premium_radio"
-                android:text="Select a service and involve the Point of Sale System" />
+                android:text="Select any service and involve the Point of Sale System as wished" />
         </RelativeLayout>
 
         <Button
