@@ -8,18 +8,6 @@
     tools:context=".Pre_menu.Registration">
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/registration_wrap"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/identity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"
-            android:hint="Your User Identity" />
-    </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
         android:id="@+id/first_name_wrap"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

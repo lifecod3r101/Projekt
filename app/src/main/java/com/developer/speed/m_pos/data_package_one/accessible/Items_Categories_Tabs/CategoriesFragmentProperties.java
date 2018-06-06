@@ -1,4 +1,4 @@
-package com.developer.speed.m_pos.Items_Categories_Tabs;
+package com.developer.speed.m_pos.data_package_one.accessible.Items_Categories_Tabs;
 
 public class CategoriesFragmentProperties {
     String category;
@@ -8,7 +8,7 @@ public class CategoriesFragmentProperties {
     }
 
     public String getCategory() {
-        return category;
+        return this.category;
     }
 
     public void setCategory(String category) {

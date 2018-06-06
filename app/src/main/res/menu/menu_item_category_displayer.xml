@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.developer.speed.m_pos.Items_Categories_Tabs.ItemCategoryDisplayer">
+    tools:context="com.developer.speed.m_pos.data_package_one.accessible.Items_Categories_Tabs.ItemCategoryDisplayer">
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"

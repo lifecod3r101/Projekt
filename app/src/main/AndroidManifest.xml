@@ -21,7 +21,7 @@
             android:label="@string/title_activity_navigation_bar"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Items_Categories_Tabs.ItemCategoryDisplayer"
+            android:name=".data_package_one.accessible.Items_Categories_Tabs.ItemCategoryDisplayer"
             android:label="@string/title_activity_item_category_displayer"
             android:theme="@style/AppTheme"></activity>
     </application>

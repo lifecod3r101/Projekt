@@ -1,4 +1,4 @@
-package com.developer.speed.m_pos.Items_Categories_Tabs;
+package com.developer.speed.m_pos.data_package_one.accessible.Items_Categories_Tabs;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -9,8 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.developer.speed.m_pos.R.id;
-import com.developer.speed.m_pos.R.layout;
+import com.developer.speed.m_pos.R;
 
 public class ItemsFragment extends Fragment {
     public ItemsFragment() {
@@ -24,10 +23,10 @@ public class ItemsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(layout.item_tab_layout, container, false);
-        RecyclerView itemAvailableRecycler = rootView.findViewById(id.available_item_card_recycler);
+        View rootView = inflater.inflate(R.layout.item_tab_layout, container, false);
+        RecyclerView itemAvailableRecycler = rootView.findViewById(R.id.available_item_card_recycler);
         itemAvailableRecycler.setHasFixedSize(true);
-        LinearLayoutManager categoryManager = new LinearLayoutManager(this.getActivity());
+        LinearLayoutManager categoryManager = new LinearLayoutManager(getActivity());
         itemAvailableRecycler.setLayoutManager(categoryManager);
         return rootView;
     }

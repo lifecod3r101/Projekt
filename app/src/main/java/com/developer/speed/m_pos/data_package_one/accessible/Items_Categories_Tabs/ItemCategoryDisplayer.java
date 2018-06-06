@@ -1,11 +1,9 @@
-package com.developer.speed.m_pos.Items_Categories_Tabs;
+package com.developer.speed.m_pos.data_package_one.accessible.Items_Categories_Tabs;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.TabLayout.TabLayoutOnPageChangeListener;
-import android.support.design.widget.TabLayout.ViewPagerOnTabSelectedListener;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -16,14 +14,10 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.developer.speed.m_pos.R;
-import com.developer.speed.m_pos.R.id;
-import com.developer.speed.m_pos.R.layout;
-import com.developer.speed.m_pos.R.string;
 
 public class ItemCategoryDisplayer extends AppCompatActivity {
 
@@ -35,7 +29,7 @@ public class ItemCategoryDisplayer extends AppCompatActivity {
      * may be best to switch to a
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
-    private ItemCategoryDisplayer.SectionsPagerAdapter mSectionsPagerAdapter;
+    private SectionsPagerAdapter mSectionsPagerAdapter;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -45,25 +39,25 @@ public class ItemCategoryDisplayer extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(layout.item_category_displayer_layout);
+        setContentView(R.layout.item_category_displayer_layout);
 
-        Toolbar toolbar = this.findViewById(id.toolbar);
-        this.setSupportActionBar(toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        this.mSectionsPagerAdapter = new ItemCategoryDisplayer.SectionsPagerAdapter(this.getSupportFragmentManager());
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
-        this.mViewPager = this.findViewById(id.container);
-        this.mViewPager.setAdapter(this.mSectionsPagerAdapter);
+        mViewPager = findViewById(R.id.container);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        TabLayout tabLayout = this.findViewById(id.tabs);
+        TabLayout tabLayout = findViewById(R.id.tabs);
 
-        this.mViewPager.addOnPageChangeListener(new TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.addOnTabSelectedListener(new ViewPagerOnTabSelectedListener(this.mViewPager));
+        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
-        FloatingActionButton fab = this.findViewById(id.fab);
-        fab.setOnClickListener(new OnClickListener() {
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -77,7 +71,7 @@ public class ItemCategoryDisplayer extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        this.getMenuInflater().inflate(R.menu.menu_item_category_displayer, menu);
+        getMenuInflater().inflate(menu.menu_item_category_displayer, menu);
         return true;
     }
 
@@ -113,10 +107,10 @@ public class ItemCategoryDisplayer extends AppCompatActivity {
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        public static ItemCategoryDisplayer.PlaceholderFragment newInstance(int sectionNumber) {
-            ItemCategoryDisplayer.PlaceholderFragment fragment = new ItemCategoryDisplayer.PlaceholderFragment();
+        public static PlaceholderFragment newInstance(int sectionNumber) {
+            PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
-            args.putInt(ItemCategoryDisplayer.PlaceholderFragment.ARG_SECTION_NUMBER, sectionNumber);
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
             return fragment;
         }
@@ -124,9 +118,9 @@ public class ItemCategoryDisplayer extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(layout.item_tab_layout, container, false);
-            TextView textView = rootView.findViewById(id.section_label);
-            textView.setText(this.getString(string.section_format, this.getArguments().getInt(ItemCategoryDisplayer.PlaceholderFragment.ARG_SECTION_NUMBER)));
+            View rootView = inflater.inflate(R.layout.item_tab_layout, container, false);
+            TextView textView = rootView.findViewById(R.id.section_label);
+            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
         }
     }
@@ -145,7 +139,7 @@ public class ItemCategoryDisplayer extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return ItemCategoryDisplayer.PlaceholderFragment.newInstance(position + 1);
+            return PlaceholderFragment.newInstance(position + 1);
         }
 
         @Override

@@ -1,4 +1,4 @@
-package com.developer.speed.m_pos.Items_Categories_Tabs;
+package com.developer.speed.m_pos.data_package_one.accessible.Items_Categories_Tabs;
 
 public class ItemsFragmentProperties {
     String itemAvailableCode, itemAvailableName;
@@ -15,7 +15,7 @@ public class ItemsFragmentProperties {
     }
 
     public String getItemAvailableCode() {
-        return itemAvailableCode;
+        return this.itemAvailableCode;
     }
 
     public void setItemAvailableCode(String itemAvailableCode) {
@@ -23,7 +23,7 @@ public class ItemsFragmentProperties {
     }
 
     public String getItemAvailableName() {
-        return itemAvailableName;
+        return this.itemAvailableName;
     }
 
     public void setItemAvailableName(String itemAvailableName) {
@@ -31,7 +31,7 @@ public class ItemsFragmentProperties {
     }
 
     public int getItemAvailableQuantity() {
-        return itemAvailableQuantity;
+        return this.itemAvailableQuantity;
     }
 
     public void setItemAvailableQuantity(int itemAvailableQuantity) {
@@ -39,7 +39,7 @@ public class ItemsFragmentProperties {
     }
 
     public double getItemAvailablePrice() {
-        return itemAvailablePrice;
+        return this.itemAvailablePrice;
     }
 
     public void setItemAvailablePrice(double itemAvailablePrice) {
@@ -47,7 +47,7 @@ public class ItemsFragmentProperties {
     }
 
     public String getItemAvailableCategory() {
-        return itemAvailableCategory;
+        return this.itemAvailableCategory;
     }
 
     public void setItemAvailableCategory(String itemAvailableCategory) {
