@@ -5,8 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.developer.speed.m_pos.R.id;
-import com.developer.speed.m_pos.R.layout;
+import com.developer.speed.m_pos.R;
 import com.developer.speed.m_pos.Transactions.TransactionAdapter;
 import com.developer.speed.m_pos.Transactions.TransactionProperties;
 
@@ -22,9 +21,9 @@ public class DebtRecord extends AppCompatActivity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        this.setContentView(layout.debt_record_recycler_layout);
+        this.setContentView(R.layout.debt_record_recycler_layout);
         this.debtRecordProperties = new ArrayList<>();
-        this.debtRecycle = this.findViewById(id.debt_recycler);
+        this.debtRecycle = this.findViewById(R.id.debt_recycler);
         this.debtRecycle.setHasFixedSize(true);
         this.debtRecycle.setLayoutManager(new LinearLayoutManager(this));
     }
