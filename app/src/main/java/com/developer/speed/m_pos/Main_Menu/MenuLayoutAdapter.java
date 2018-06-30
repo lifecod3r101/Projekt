@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -29,27 +28,17 @@ public class MenuLayoutAdapter extends RecyclerView.Adapter<MenuViewHolder> {
     }
     @NonNull
     @Override
-    public MenuLayoutAdapter.MenuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MenuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater menuInflater = LayoutInflater.from(this.menuContext);
         View view = menuInflater.inflate(layout.menu_layout_cards, null);
-        return new MenuLayoutAdapter.MenuViewHolder(view);
+        return new MenuViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MenuLayoutAdapter.MenuViewHolder holder, final int position)
+    public void onBindViewHolder(@NonNull MenuViewHolder holder, int position)
     {
         MenuLayoutCardProperty property = this.myMenuInformation.get(position);
         holder.menuText.setText(property.getMenuItem());
-        holder.menuCard.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch (position) {
-                    case 0:
-
-
-                }
-            }
-        });
     }
 
     @Override
@@ -69,5 +58,6 @@ public class MenuLayoutAdapter extends RecyclerView.Adapter<MenuViewHolder> {
             this.menuText = itemView.findViewById(id.menu_card_information);
             this.menuCard = itemView.findViewById(id.menu_card);
         }
+
     }
 }

@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.developer.speed.m_pos.R;
+import com.developer.speed.m_pos.R.layout;
 
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class CategoriesFragmentAdapter extends Adapter<CategoriesFragmentAdapter
     @Override
     public CategoriesFragmentAdapter.CategoriesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater categoriesInflater = LayoutInflater.from(parent.getContext());
-        View categoriesView = categoriesInflater.inflate(R.layout.categories_tab_layout, parent, false);
+        View categoriesView = categoriesInflater.inflate(layout.categories_tab_layout, parent, false);
         return new CategoriesFragmentAdapter.CategoriesViewHolder(categoriesView);
     }
 

@@ -41,7 +41,7 @@ public class Registration extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (this.firstName.getText().toString().isEmpty() && this.lastName.getText().toString().isEmpty() && this.phoneNumber.getText().toString().isEmpty() || this.firstName.getText().toString().isEmpty() && this.lastName.getText().toString().isEmpty() || this.firstName.getText().toString().isEmpty()) {
+        if (this.firstName.getText().toString().isEmpty() && this.lastName.getText().toString().isEmpty() && this.phoneNumber.getText().toString().isEmpty() || this.firstName.getText().toString().isEmpty() && this.lastName.getText().toString().isEmpty() || this.firstName.getText().toString().isEmpty() || this.lastName.getText().toString().isEmpty() || this.phoneNumber.getText().toString().isEmpty()) {
             new Builder(this.getApplicationContext()).setTitle("Required").setMessage("Sorry. The fields must be filled").setNeutralButton("Ok", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

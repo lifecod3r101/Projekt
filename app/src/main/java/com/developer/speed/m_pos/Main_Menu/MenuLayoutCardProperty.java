@@ -2,21 +2,21 @@ package com.developer.speed.m_pos.Main_Menu;
 
 public class MenuLayoutCardProperty
 {
-    private String menuItem;
+    protected static String menuItem;
     public MenuLayoutCardProperty(){}
     public MenuLayoutCardProperty(String menuItem)
     {
-        this.menuItem=menuItem;
+        MenuLayoutCardProperty.menuItem = menuItem;
     }
 
     public String getMenuItem()
     {
-        return this.menuItem;
+        return MenuLayoutCardProperty.menuItem;
     }
 
     public void setMenuItem(String menuItem)
     {
-        this.menuItem = menuItem;
+        MenuLayoutCardProperty.menuItem = menuItem;
     }
 }
 

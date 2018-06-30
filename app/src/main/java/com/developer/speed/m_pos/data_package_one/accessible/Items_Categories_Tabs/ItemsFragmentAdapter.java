@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.developer.speed.m_pos.R;
+import com.developer.speed.m_pos.R.layout;
 
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class ItemsFragmentAdapter extends Adapter<ItemsFragmentAdapter.ItemsAvai
     @Override
     public ItemsFragmentAdapter.ItemsAvailableViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater itemsAvailableInflater = LayoutInflater.from(parent.getContext());
-        View itemsAvailableView = itemsAvailableInflater.inflate(R.layout.item_tab_layout, parent, false);
+        View itemsAvailableView = itemsAvailableInflater.inflate(layout.item_tab_layout, parent, false);
         return new ItemsFragmentAdapter.ItemsAvailableViewHolder(itemsAvailableView);
     }
 
@@ -57,11 +58,11 @@ public class ItemsFragmentAdapter extends Adapter<ItemsFragmentAdapter.ItemsAvai
         public ItemsAvailableViewHolder(View itemView) {
             super(itemView);
             itemAvailableCard = itemView.findViewById(R.id.item_available_card);
-            itemsAvailableCode = itemView.findViewById(R.id.item_available_code);
-            itemsAvailableName = itemView.findViewById(R.id.item_available_name);
-            itemsAvailableQuantity = itemView.findViewById(R.id.item_available_quantity);
-            itemsAvailablePrice = itemView.findViewById(R.id.item_available_unit_price);
-            itemsAvailableCategory = itemView.findViewById(R.id.item_available_category);
+            this.itemsAvailableCode = itemView.findViewById(R.id.item_available_code);
+            this.itemsAvailableName = itemView.findViewById(R.id.item_available_name);
+            this.itemsAvailableQuantity = itemView.findViewById(R.id.item_available_quantity);
+            this.itemsAvailablePrice = itemView.findViewById(R.id.item_available_unit_price);
+            this.itemsAvailableCategory = itemView.findViewById(R.id.item_available_category);
         }
     }
 }

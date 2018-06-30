@@ -11,9 +11,11 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AlertDialog.Builder;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.View.OnLongClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.developer.speed.m_pos.Debt_Creator.DebtCreator;
 import com.developer.speed.m_pos.Main_Menu.MainMenu;
 import com.developer.speed.m_pos.R.id;
 import com.developer.speed.m_pos.R.layout;
@@ -30,6 +32,7 @@ public class SellSection extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.setContentView(layout.sell_layout);
     }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -40,6 +43,7 @@ public class SellSection extends AppCompatActivity {
         this.nextItem = this.findViewById(id.next_item);
         this.completeTransaction = this.findViewById(id.complete_transaction);
     }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -51,7 +55,7 @@ public class SellSection extends AppCompatActivity {
         this.completeTransaction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (SellSection.this.itemCode.getText().toString().isEmpty() && SellSection.this.itemName.getText().toString().isEmpty() && SellSection.this.itemQuantity.getText().toString().isEmpty() || SellSection.this.itemName.getText().toString().isEmpty() && SellSection.this.itemQuantity.getText().toString().isEmpty() || SellSection.this.itemQuantity.getText().toString().isEmpty()) {
+                if (SellSection.this.itemCode.getText().toString().isEmpty() && SellSection.this.itemName.getText().toString().isEmpty() && SellSection.this.itemQuantity.getText().toString().isEmpty() || SellSection.this.itemCode.getText().toString().isEmpty() && SellSection.this.itemName.getText().toString().isEmpty() || SellSection.this.itemCode.getText().toString().isEmpty() || SellSection.this.itemName.getText().toString().isEmpty() || SellSection.this.itemQuantity.getText().toString().isEmpty()) {
                     new Builder(SellSection.this.getApplicationContext()).setTitle("Required").setMessage("Sorry. Blank Fields prohibited").setNeutralButton("Ok", new OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -62,7 +66,7 @@ public class SellSection extends AppCompatActivity {
                     new Builder(SellSection.this.getApplicationContext()).setTitle("Confirm").setMessage("Are you sure you want to pay?").setPositiveButton("Yes", new OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-
+                            dialog.dismiss();
                         }
                     }).setNegativeButton("No", new OnClickListener() {
                         @Override
@@ -73,7 +77,24 @@ public class SellSection extends AppCompatActivity {
                 }
             }
         });
+        this.completeTransaction.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                if (SellSection.this.itemCode.getText().toString().isEmpty() && SellSection.this.itemName.getText().toString().isEmpty() && SellSection.this.itemQuantity.getText().toString().isEmpty() || SellSection.this.itemCode.getText().toString().isEmpty() && SellSection.this.itemName.getText().toString().isEmpty() || SellSection.this.itemCode.getText().toString().isEmpty() || SellSection.this.itemName.getText().toString().isEmpty() || SellSection.this.itemQuantity.getText().toString().isEmpty()) {
+                    new Builder(SellSection.this.getApplicationContext()).setTitle("Required").setMessage("Sorry. Blank Fields prohibited").setNeutralButton("Ok", new OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                } else {
+                    SellSection.this.startActivity(new Intent(SellSection.this, DebtCreator.class));
+                }
+                return true;
+            }
+        });
     }
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -86,8 +107,7 @@ public class SellSection extends AppCompatActivity {
         backDialog.setTitle("Cancel Transaction").setMessage("Do you want to cancel this transaction and go back to the main menu?").setPositiveButton("Yes", new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Intent backIntent = new Intent(SellSection.this, MainMenu.class);
-                SellSection.this.startActivity(backIntent);
+                SellSection.this.startActivity(new Intent(SellSection.this, MainMenu.class));
                 dialog.dismiss();
             }
         }).setNegativeButton("No", new OnClickListener() {
@@ -98,4 +118,3 @@ public class SellSection extends AppCompatActivity {
         });
     }
 }
-

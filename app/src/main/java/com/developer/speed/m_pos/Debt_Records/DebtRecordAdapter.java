@@ -3,7 +3,7 @@ package com.developer.speed.m_pos.Debt_Records;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView.Adapter;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,16 +17,16 @@ import com.developer.speed.m_pos.R.layout;
 
 import java.util.List;
 
-public class DebtRecordAdapter extends Adapter<DebtRecordViewHolder> {
+public class DebtRecordAdapter extends RecyclerView.Adapter<DebtRecordViewHolder> {
     private final Context debtContext;
     private final List<DebtRecordProperty> myDebtInformation;
 
     @NonNull
     @Override
-    public DebtRecordAdapter.DebtRecordViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public DebtRecordViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater debtSectInflater = LayoutInflater.from(this.debtContext);
         View view = debtSectInflater.inflate(layout.debt_record_recycler_layout, null);
-        return new DebtRecordAdapter.DebtRecordViewHolder(view);
+        return new DebtRecordViewHolder(view);
     }
     public DebtRecordAdapter(Context debtContext,List<DebtRecordProperty>myDebtInformation)
     {
@@ -35,7 +35,7 @@ public class DebtRecordAdapter extends Adapter<DebtRecordViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DebtRecordAdapter.DebtRecordViewHolder holder, int position)
+    public void onBindViewHolder(@NonNull DebtRecordViewHolder holder, int position)
     {
         DebtRecordProperty myDebtProperty = this.myDebtInformation.get(position);
         holder.debtName.setText(myDebtProperty.getDebtName());

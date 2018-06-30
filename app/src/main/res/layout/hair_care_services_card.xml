@@ -3,28 +3,30 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:scrollbars="vertical">
+
     <android.support.v7.widget.CardView
-        android:id="@+id/debt_card"
+        android:id="@+id/hair_care_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <TextView
-            android:id="@+id/debt_name"
+            android:id="@+id/service_code_hc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="22dp"
-            android:textSize="16dp" />
+            android:padding="22dp" />
+
         <TextView
-            android:id="@+id/debt_phone_number"
+            android:id="@+id/service_name_hc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="22dp"
-            android:textSize="16dp" />
+            android:padding="22dp" />
+
         <TextView
-            android:id="@+id/debt_date"
+            android:id="@+id/service_cost_hc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="22dp"
-            android:textSize="16dp" />
+            android:padding="22dp" />
     </android.support.v7.widget.CardView>
 </LinearLayout>

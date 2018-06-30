@@ -2,19 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <ScrollView
-        android:id="@+id/registration_dialog_payment_scroll"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+    android:orientation="vertical"
+    android:scrollbars="vertical">
         <android.support.v7.widget.Toolbar
             android:id="@+id/plan_title_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
-
             <TextView
                 android:id="@+id/plan_title"
                 android:layout_width="wrap_content"
@@ -25,17 +19,20 @@
                 android:textStyle="bold" />
         </android.support.v7.widget.Toolbar>
 
+    <RadioGroup
+        android:id="@+id/payment_radio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
         <RelativeLayout
             android:id="@+id/basic_relativity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-
             <RadioButton
                 android:id="@+id/basic_radio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp" />
-
             <TextView
                 android:id="@+id/basic_text"
                 android:layout_width="wrap_content"
@@ -44,7 +41,6 @@
                 android:layout_toRightOf="@id/basic_radio"
                 android:text="Basic:Ksh 500/Month"
                 android:textSize="30dp" />
-
             <TextView
                 android:id="@+id/basic_description"
                 android:layout_width="wrap_content"
@@ -53,20 +49,16 @@
                 android:layout_marginLeft="11dp"
                 android:layout_toRightOf="@id/basic_radio"
                 android:text="Use The Point Of Sale System without anything extra" />
-
         </RelativeLayout>
-
         <RelativeLayout
             android:id="@+id/premium_relativity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-
             <RadioButton
                 android:id="@+id/premium_radio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp" />
-
             <TextView
                 android:id="@+id/premium_text"
                 android:layout_width="wrap_content"
@@ -75,7 +67,6 @@
                 android:layout_toRightOf="@id/premium_radio"
                 android:text="Premium:Ksh 1000/Month"
                 android:textSize="30dp" />
-
             <TextView
                 android:id="@+id/premium_description"
                 android:layout_width="wrap_content"
@@ -85,7 +76,7 @@
                 android:layout_toRightOf="@id/premium_radio"
                 android:text="Select any service and involve the Point of Sale System as wished" />
         </RelativeLayout>
-
+    </RadioGroup>
         <Button
             android:id="@+id/confirm"
             android:layout_width="match_parent"
@@ -93,6 +84,4 @@
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
             android:text="Confirm" />
-    </ScrollView>
-
 </LinearLayout>

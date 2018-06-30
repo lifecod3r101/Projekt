@@ -4,27 +4,34 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:orientation="vertical">
+
     <android.support.v7.widget.CardView
-        android:id="@+id/debt_card"
+        android:id="@+id/category_items_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <TextView
-            android:id="@+id/debt_name"
+            android:id="@+id/category_items_code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="22dp"
-            android:textSize="16dp" />
+            android:padding="22dp" />
+
         <TextView
-            android:id="@+id/debt_phone_number"
+            android:id="@+id/category_items_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="22dp"
-            android:textSize="16dp" />
+            android:padding="22dp" />
+
         <TextView
-            android:id="@+id/debt_date"
+            android:id="@+id/category_items_quantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="22dp"
-            android:textSize="16dp" />
+            android:padding="22dp" />
+
+        <TextView
+            android:id="@+id/category_items_unit_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="22dp" />
     </android.support.v7.widget.CardView>
 </LinearLayout>
