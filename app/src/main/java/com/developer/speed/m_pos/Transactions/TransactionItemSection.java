@@ -21,18 +21,18 @@ public class TransactionItemSection extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(layout.transaction_item_recycler_layout);
+        setContentView(layout.transaction_item_recycler_layout);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        this.transactionItemPropertiesList = new ArrayList<>();
-        this.transactItemRecycler = this.findViewById(id.transaction_item_recycler);
-        this.transactItemRecycler.setHasFixedSize(true);
-        this.transactItemRecycler.setLayoutManager(new LinearLayoutManager(this));
-        this.transactionItemAdapter = new TransactionItemAdapter(this, this.transactionItemPropertiesList);
-        this.transactItemRecycler.setAdapter(this.transactionItemAdapter);
+        transactionItemPropertiesList = new ArrayList<>();
+        transactItemRecycler = findViewById(id.transaction_item_recycler);
+        transactItemRecycler.setHasFixedSize(true);
+        transactItemRecycler.setLayoutManager(new LinearLayoutManager(this));
+        transactionItemAdapter = new TransactionItemAdapter(this, transactionItemPropertiesList);
+        transactItemRecycler.setAdapter(transactionItemAdapter);
     }
 
     @Override
@@ -43,6 +43,6 @@ public class TransactionItemSection extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        this.startActivity(new Intent(this, TransactionSection.class));
+        startActivity(new Intent(this, TransactionSection.class));
     }
 }

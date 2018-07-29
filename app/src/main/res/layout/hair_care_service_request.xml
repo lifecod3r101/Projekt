@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/hc_service_request_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/hc_service_request_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:padding="12dp"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/hc_service_total_cost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp" />
+
+    <Button
+        android:id="@+id/list_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="List This Service" />
+
+    <Button
+        android:id="@+id/complete_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Complete The List" />
+</LinearLayout>

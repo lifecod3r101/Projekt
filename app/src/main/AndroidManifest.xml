@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.developer.speed.m_pos">
 
+    <uses-sdk android:minSdkVersion="21" />
+    <!--<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true"/>-->
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,8 +20,27 @@
         <activity android:name=".Pre_menu.Registration">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Pre_menu.Login"
+            android:exported="false"></activity>
+        <activity
+            android:name=".Main_Menu.MainMenu"
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.OPENABLE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".data_package_one.accessible.Sell_Items.SellSection">
+            <intent-filter>
+                <category android:name="android.intent.category.OPENABLE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Debt_Records.DebtRecord">
+            <intent-filter>
+                <category android:name="android.intent.category.OPENABLE" />
             </intent-filter>
         </activity>
         <activity
@@ -24,6 +51,14 @@
             android:name=".data_package_one.accessible.Items_Categories_Tabs.ItemCategoryDisplayer"
             android:label="@string/title_activity_item_category_displayer"
             android:theme="@style/AppTheme"></activity>
+        <activity android:name=".Services.HairCare.HairCareServiceSection" />
+        <activity android:name=".Services.HairCare.HairCareServiceAdd" />
+        <activity android:name=".Category_Items.CategoryItemSection" />
+        <activity android:name=".Debt_Creator.DebtCreator" />
+        <activity android:name=".Debt_Items.DebtRecordItemSection" />
+        <activity android:name=".Item_Adder.ItemAdder" />
+        <activity android:name=".Transactions.TransactionSection" />
+        <activity android:name=".Transactions.TransactionItemSection" />
+        <activity android:name=".Services.HairCare.HCCompleteListSection" />
     </application>
-
 </manifest>

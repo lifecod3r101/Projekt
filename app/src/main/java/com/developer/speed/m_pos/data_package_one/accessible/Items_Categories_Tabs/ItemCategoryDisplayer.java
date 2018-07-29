@@ -1,8 +1,7 @@
 package com.developer.speed.m_pos.data_package_one.accessible.Items_Categories_Tabs;
 
 import android.content.Intent;
-import android.os.Build.VERSION;
-import android.os.Build.VERSION_CODES;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
@@ -17,7 +16,6 @@ import android.support.v7.app.AlertDialog.Builder;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnContextClickListener;
 
 import com.developer.speed.m_pos.Item_Adder.ItemAdder;
 import com.developer.speed.m_pos.R.id;
@@ -34,32 +32,32 @@ public class ItemCategoryDisplayer extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(layout.item_category_displayer_layout);
+        setContentView(layout.item_category_displayer_layout);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        this.appBarLayout = this.findViewById(id.appbar);
-        this.tabLayout = this.findViewById(id.tabs);
-        this.itemsTab = this.findViewById(id.items_tab);
-        this.categoriesTab = this.findViewById(id.categories_tab);
-        this.viewPager = this.findViewById(id.container);
-        this.floatingActionButton = this.findViewById(id.fab);
-        this.icAdapter = new ItemCategoryAdapter(this.getSupportFragmentManager(), this.tabLayout.getTabCount());
-        this.viewPager.setAdapter(this.icAdapter);
+        appBarLayout = findViewById(id.appbar);
+        tabLayout = findViewById(id.tabs);
+        itemsTab = findViewById(id.items_tab);
+        categoriesTab = findViewById(id.categories_tab);
+        viewPager = findViewById(id.container);
+        floatingActionButton = findViewById(id.fab);
+        icAdapter = new ItemCategoryAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(icAdapter);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        this.tabLayout.addOnTabSelectedListener(new OnTabSelectedListener() {
+        tabLayout.addOnTabSelectedListener(new OnTabSelectedListener() {
             @Override
             public void onTabSelected(Tab tab) {
-                ItemCategoryDisplayer.this.viewPager.setCurrentItem(tab.getPosition(), true);
+                viewPager.setCurrentItem(tab.getPosition(), true);
                 if (tab.getPosition() == 1) {
-                    if (VERSION.SDK_INT >= VERSION_CODES.M) {
-                        ItemCategoryDisplayer.this.floatingActionButton.setOnContextClickListener(new OnContextClickListener() {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        floatingActionButton.setOnContextClickListener(new View.OnContextClickListener() {
                             @Override
                             public boolean onContextClick(View v) {
                                 ItemCategoryDisplayer.this.startActivity(new Intent(ItemCategoryDisplayer.this, ItemAdder.class));
@@ -68,8 +66,8 @@ public class ItemCategoryDisplayer extends AppCompatActivity {
                         });
                     }
                 } else {
-                    if (VERSION.SDK_INT >= VERSION_CODES.M) {
-                        ItemCategoryDisplayer.this.floatingActionButton.setOnContextClickListener(new OnContextClickListener() {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        floatingActionButton.setOnContextClickListener(new View.OnContextClickListener() {
                             @Override
                             public boolean onContextClick(View v) {
                                 LayoutInflater catInflater = LayoutInflater.from(ItemCategoryDisplayer.this.getParent());

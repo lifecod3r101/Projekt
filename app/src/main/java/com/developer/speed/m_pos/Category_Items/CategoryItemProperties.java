@@ -14,7 +14,7 @@ public class CategoryItemProperties {
     }
 
     public String getItemCatCode() {
-        return this.itemCatCode;
+        return itemCatCode;
     }
 
     public void setItemCatCode(String itemCatCode) {
@@ -22,7 +22,7 @@ public class CategoryItemProperties {
     }
 
     public String getItemCatName() {
-        return this.itemCatName;
+        return itemCatName;
     }
 
     public void setItemCatName(String itemCatName) {
@@ -30,7 +30,7 @@ public class CategoryItemProperties {
     }
 
     public int getItemCatQuantity() {
-        return this.itemCatQuantity;
+        return itemCatQuantity;
     }
 
     public void setItemCatQuantity(int itemCatQuantity) {
@@ -38,7 +38,7 @@ public class CategoryItemProperties {
     }
 
     public double getItemCatPrice() {
-        return itemCatPrice;
+        return this.itemCatPrice;
     }
 
     public void setItemCatPrice(double itemCatPrice) {

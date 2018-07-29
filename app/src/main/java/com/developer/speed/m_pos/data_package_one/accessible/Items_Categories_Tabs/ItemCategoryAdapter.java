@@ -26,6 +26,6 @@ public class ItemCategoryAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return this.tabNumber;
+        return tabNumber;
     }
 }

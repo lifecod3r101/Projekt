@@ -11,16 +11,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.developer.speed.m_pos.Main_Menu.MenuLayoutAdapter.MenuViewHolder;
+import com.developer.speed.m_pos.R;
 import com.developer.speed.m_pos.R.id;
-import com.developer.speed.m_pos.R.layout;
 
 import java.util.List;
 
 
-public class MenuLayoutAdapter extends RecyclerView.Adapter<MenuViewHolder> {
+public class MenuLayoutAdapter extends RecyclerView.Adapter<MenuLayoutAdapter.MenuViewHolder> {
     private final Context menuContext;
     private final List<MenuLayoutCardProperty> myMenuInformation;
+    private Context menuContext1;
+
     public MenuLayoutAdapter(Context menuContext,List<MenuLayoutCardProperty>myMenuInformation)
     {
         this.menuContext=menuContext;
@@ -28,23 +29,23 @@ public class MenuLayoutAdapter extends RecyclerView.Adapter<MenuViewHolder> {
     }
     @NonNull
     @Override
-    public MenuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater menuInflater = LayoutInflater.from(this.menuContext);
-        View view = menuInflater.inflate(layout.menu_layout_cards, null);
-        return new MenuViewHolder(view);
+    public MenuLayoutAdapter.MenuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater menuInflater = LayoutInflater.from(menuContext);
+        View view = menuInflater.inflate(R.layout.menu_layout_cards, null);
+        return new MenuLayoutAdapter.MenuViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MenuViewHolder holder, int position)
+    public void onBindViewHolder(@NonNull MenuLayoutAdapter.MenuViewHolder holder, int position)
     {
-        MenuLayoutCardProperty property = this.myMenuInformation.get(position);
+        MenuLayoutCardProperty property = myMenuInformation.get(position);
         holder.menuText.setText(property.getMenuItem());
     }
 
     @Override
     public int getItemCount()
     {
-        return this.myMenuInformation.size();
+        return myMenuInformation.size();
     }
 
 
@@ -55,9 +56,8 @@ public class MenuLayoutAdapter extends RecyclerView.Adapter<MenuViewHolder> {
         public MenuViewHolder(View itemView)
         {
             super(itemView);
-            this.menuText = itemView.findViewById(id.menu_card_information);
-            this.menuCard = itemView.findViewById(id.menu_card);
+            menuText = itemView.findViewById(id.menu_card_information);
+            menuCard = itemView.findViewById(id.menu_card);
         }
-
     }
 }

@@ -10,7 +10,6 @@ import android.support.v7.app.AlertDialog.Builder;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -27,25 +26,25 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.login_layout);
+        setContentView(R.layout.login_layout);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        this.phoneMail = this.findViewById(id.phone_email_enter);
-        this.loginPassword = this.findViewById(id.login_password_enter);
-        this.login = this.findViewById(id.login);
-        this.accountCreate = this.findViewById(id.account_create_text);
+        phoneMail = findViewById(id.phone_email_enter);
+        loginPassword = findViewById(id.login_password_enter);
+        login = findViewById(id.login);
+        accountCreate = findViewById(id.account_create_text);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        this.login.setOnClickListener(new OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Login.this.phoneMail.getText().toString().isEmpty() && Login.this.loginPassword.getText().toString().isEmpty() || Login.this.phoneMail.getText().toString().isEmpty() || Login.this.loginPassword.getText().toString().isEmpty()) {
+                if (phoneMail.getText().toString().isEmpty() && loginPassword.getText().toString().isEmpty() || phoneMail.getText().toString().isEmpty() || loginPassword.getText().toString().isEmpty()) {
                     new Builder(Login.this.getApplicationContext()).setTitle("Required").setMessage("Sorry. Blank Fields Not allowed").setNeutralButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -61,7 +60,7 @@ public class Login extends AppCompatActivity {
                     final RadioButton basicRadio = payView.findViewById(id.basic_radio);
                     final RadioButton premiumRadio = payView.findViewById(id.premium_radio);
                     Button confirmRadio = payView.findViewById(id.confirm);
-                    confirmRadio.setOnClickListener(new OnClickListener() {
+                    confirmRadio.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             if (!basicRadio.isChecked() || !premiumRadio.isChecked()) {
@@ -85,7 +84,7 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
-        this.accountCreate.setOnClickListener(new OnClickListener() {
+        accountCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Login.this.startActivity(new Intent(Login.this, Registration.class));

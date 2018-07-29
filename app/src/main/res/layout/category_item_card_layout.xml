@@ -4,30 +4,25 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:orientation="vertical">
-
     <android.support.v7.widget.CardView
         android:id="@+id/category_items_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <TextView
             android:id="@+id/category_items_code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="22dp" />
-
         <TextView
             android:id="@+id/category_items_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="22dp" />
-
         <TextView
             android:id="@+id/category_items_quantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="22dp" />
-
         <TextView
             android:id="@+id/category_items_unit_price"
             android:layout_width="match_parent"

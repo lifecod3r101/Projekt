@@ -11,7 +11,7 @@ public class MenuLayoutCardProperty
 
     public String getMenuItem()
     {
-        return MenuLayoutCardProperty.menuItem;
+        return menuItem;
     }
 
     public void setMenuItem(String menuItem)

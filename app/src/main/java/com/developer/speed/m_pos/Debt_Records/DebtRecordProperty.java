@@ -16,7 +16,7 @@ public class DebtRecordProperty
 
     public String getDebtName()
     {
-        return this.debtName;
+        return debtName;
     }
 
     public void setDebtName(String debtName)
@@ -26,7 +26,7 @@ public class DebtRecordProperty
 
     public int getDebtPhone()
     {
-        return this.debtPhone;
+        return debtPhone;
     }
 
     public void setDebtPhone(int debtPhone)
@@ -36,7 +36,7 @@ public class DebtRecordProperty
 
     public Date getDebtDate()
     {
-        return this.debtDate;
+        return debtDate;
     }
 
     public void setDebtDate(Date debtDate)

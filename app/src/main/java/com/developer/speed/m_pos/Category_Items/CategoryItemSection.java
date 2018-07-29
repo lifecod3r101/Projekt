@@ -22,18 +22,18 @@ public class CategoryItemSection extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(layout.category_item_recycler);
+        setContentView(layout.category_item_recycler);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        this.categoryItemPropertiesList = new ArrayList<>();
-        this.categoryItemRecycler = this.findViewById(id.category_items_recycler);
-        this.categoryItemRecycler.setHasFixedSize(true);
-        this.categoryItemRecycler.setLayoutManager(new LinearLayoutManager(this));
-        this.catItemAdapter = new CategoryItemAdapter(this, this.categoryItemPropertiesList);
-        this.categoryItemRecycler.setAdapter(this.catItemAdapter);
+        categoryItemPropertiesList = new ArrayList<>();
+        categoryItemRecycler = findViewById(id.category_items_recycler);
+        categoryItemRecycler.setHasFixedSize(true);
+        categoryItemRecycler.setLayoutManager(new LinearLayoutManager(this));
+        catItemAdapter = new CategoryItemAdapter(this, categoryItemPropertiesList);
+        categoryItemRecycler.setAdapter(catItemAdapter);
     }
 
     @Override
@@ -49,6 +49,6 @@ public class CategoryItemSection extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        this.startActivity(new Intent(this, ItemCategoryDisplayer.class));
+        startActivity(new Intent(this, ItemCategoryDisplayer.class));
     }
 }

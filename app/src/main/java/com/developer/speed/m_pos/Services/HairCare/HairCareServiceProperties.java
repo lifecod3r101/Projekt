@@ -11,7 +11,7 @@ public class HairCareServiceProperties {
     }
 
     public String getHaircareCode() {
-        return haircareCode;
+        return this.haircareCode;
     }
 
     public void setHaircareCode(String haircareCode) {
@@ -19,7 +19,7 @@ public class HairCareServiceProperties {
     }
 
     public String getHaircareName() {
-        return haircareName;
+        return this.haircareName;
     }
 
     public void setHaircareName(String haircareName) {
@@ -27,7 +27,7 @@ public class HairCareServiceProperties {
     }
 
     public double getHaircareCost() {
-        return haircareCost;
+        return this.haircareCost;
     }
 
     public void setHaircareCost(double haircareCost) {

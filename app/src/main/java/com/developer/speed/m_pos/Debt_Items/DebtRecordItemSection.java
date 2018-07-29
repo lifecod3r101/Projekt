@@ -19,18 +19,18 @@ public class DebtRecordItemSection extends AppCompatActivity
     List<DebtRecordItemProperty> myDebtRecordItemProperty;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(layout.debt_item_recycler_layout);
+        setContentView(layout.debt_item_recycler_layout);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        this.myDebtRecordItemProperty = new ArrayList<>();
-        this.debtRecordItemRecycler = this.findViewById(id.debt_item_recycler);
-        this.debtRecordItemRecycler.setHasFixedSize(true);
-        this.debtRecordItemRecycler.setLayoutManager(new LinearLayoutManager(this));
-        this.myDebtRecordItemAdapter = new DebtRecordItemAdapter(this, this.myDebtRecordItemProperty);
-        this.debtRecordItemRecycler.setAdapter(this.myDebtRecordItemAdapter);
+        myDebtRecordItemProperty = new ArrayList<>();
+        debtRecordItemRecycler = findViewById(id.debt_item_recycler);
+        debtRecordItemRecycler.setHasFixedSize(true);
+        debtRecordItemRecycler.setLayoutManager(new LinearLayoutManager(this));
+        myDebtRecordItemAdapter = new DebtRecordItemAdapter(this, myDebtRecordItemProperty);
+        debtRecordItemRecycler.setAdapter(myDebtRecordItemAdapter);
     }
 
     @Override
@@ -61,6 +61,6 @@ public class DebtRecordItemSection extends AppCompatActivity
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        this.startActivity(new Intent(this, DebtRecord.class));
+        startActivity(new Intent(this, DebtRecord.class));
     }
 }

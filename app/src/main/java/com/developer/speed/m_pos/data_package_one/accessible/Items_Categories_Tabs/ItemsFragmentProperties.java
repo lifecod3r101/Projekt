@@ -15,7 +15,7 @@ public class ItemsFragmentProperties {
     }
 
     public String getItemAvailableCode() {
-        return this.itemAvailableCode;
+        return itemAvailableCode;
     }
 
     public void setItemAvailableCode(String itemAvailableCode) {
@@ -23,7 +23,7 @@ public class ItemsFragmentProperties {
     }
 
     public String getItemAvailableName() {
-        return this.itemAvailableName;
+        return itemAvailableName;
     }
 
     public void setItemAvailableName(String itemAvailableName) {
@@ -31,7 +31,7 @@ public class ItemsFragmentProperties {
     }
 
     public int getItemAvailableQuantity() {
-        return this.itemAvailableQuantity;
+        return itemAvailableQuantity;
     }
 
     public void setItemAvailableQuantity(int itemAvailableQuantity) {
@@ -39,7 +39,7 @@ public class ItemsFragmentProperties {
     }
 
     public double getItemAvailablePrice() {
-        return this.itemAvailablePrice;
+        return itemAvailablePrice;
     }
 
     public void setItemAvailablePrice(double itemAvailablePrice) {
@@ -47,7 +47,7 @@ public class ItemsFragmentProperties {
     }
 
     public String getItemAvailableCategory() {
-        return this.itemAvailableCategory;
+        return itemAvailableCategory;
     }
 
     public void setItemAvailableCategory(String itemAvailableCategory) {

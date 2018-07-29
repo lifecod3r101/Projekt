@@ -16,7 +16,7 @@ public class DebtRecordItemProperty
 
     public String getDebtRecordItemCode()
     {
-        return this.debtRecordItemCode;
+        return debtRecordItemCode;
     }
 
     public void setDebtRecordItemCode(String debtRecordItemCode)
@@ -26,7 +26,7 @@ public class DebtRecordItemProperty
 
     public String getDebtRecordItemName()
     {
-        return this.debtRecordItemName;
+        return debtRecordItemName;
     }
 
     public void setDebtRecordItemName(String debtRecordItemName)
@@ -36,7 +36,7 @@ public class DebtRecordItemProperty
 
     public int getDebtRecordItemQuantity()
     {
-        return this.debtRecordItemQuantity;
+        return debtRecordItemQuantity;
     }
 
     public void setDebtRecordItemQuantity(int debtRecordItemQuantity)
@@ -46,7 +46,7 @@ public class DebtRecordItemProperty
 
     public double getDebtRecordItemPrice()
     {
-        return debtRecordItemPrice;
+        return this.debtRecordItemPrice;
     }
 
     public void setDebtRecordItemPrice(double debtRecordItemPrice)

@@ -1,4 +1,4 @@
-package com.developer.speed.m_pos;
+package com.developer.speed.m_pos.DbRealm;
 
 import android.app.Application;
 import android.os.Bundle;
@@ -7,14 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
-import io.realm.RealmConfiguration.Builder;
 
 public class ServiPosDefault extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
         Realm.init(this);
-        RealmConfiguration serviPosConfig = new Builder().name("servipos.realm").build();
+        RealmConfiguration serviPosConfig = new RealmConfiguration.Builder().name("servipos.realm").build();
         Realm.setDefaultConfiguration(serviPosConfig);
     }
 

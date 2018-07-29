@@ -1,7 +1,6 @@
 package com.developer.speed.m_pos.Debt_Records;
 
 import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog.Builder;
@@ -31,26 +30,26 @@ public class DebtRecord extends AppCompatActivity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.debt_record_recycler_layout);
-        this.debtRecordProperties = new ArrayList<>();
-        this.debtRecycle = this.findViewById(R.id.debt_recycler);
-        this.debtRecycle.setHasFixedSize(true);
-        this.debtRecycle.setLayoutManager(new LinearLayoutManager(this));
+        setContentView(R.layout.debt_record_recycler_layout);
+        debtRecordProperties = new ArrayList<>();
+        debtRecycle = findViewById(R.id.debt_recycler);
+        debtRecycle.setHasFixedSize(true);
+        debtRecycle.setLayoutManager(new LinearLayoutManager(this));
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        this.debtRecordCard = this.findViewById(R.id.debt_card);
-        this.debtName = this.findViewById(R.id.debt_name);
-        this.debtPhone = this.findViewById(R.id.debt_phone_number);
-        this.debtDate = this.findViewById(R.id.debt_date);
+        debtRecordCard = findViewById(R.id.debt_card);
+        debtName = findViewById(R.id.debt_name);
+        debtPhone = findViewById(R.id.debt_phone_number);
+        debtDate = findViewById(R.id.debt_date);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        this.debtRecordCard.setOnClickListener(new View.OnClickListener() {
+        debtRecordCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DebtRecord.this.startActivity(new Intent(DebtRecord.this, DebtRecordItemSection.class));
@@ -81,13 +80,13 @@ public class DebtRecord extends AppCompatActivity
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        new Builder(this).setTitle("Confirm").setMessage("Do you want to return to the main menu?").setPositiveButton("Yes", new OnClickListener() {
+        new Builder(this).setTitle("Confirm").setMessage("Do you want to return to the main menu?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 DebtRecord.this.startActivity(new Intent(DebtRecord.this, MainMenu.class));
                 dialog.dismiss();
             }
-        }).setNegativeButton("No", new OnClickListener() {
+        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();

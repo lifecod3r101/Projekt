@@ -8,7 +8,7 @@ public class TransactionProperties {
     private Double transactionCost;
 
     public String getTransactionCode() {
-        return this.transactionCode;
+        return transactionCode;
     }
 
     public void setTransactionCode(String transactionCode) {
@@ -16,7 +16,7 @@ public class TransactionProperties {
     }
 
     public Date getTransactionDate() {
-        return this.transactionDate;
+        return transactionDate;
     }
 
     public void setTransactionDate(Date transactionDate) {
@@ -24,7 +24,7 @@ public class TransactionProperties {
     }
 
     public Double getTransactionCost() {
-        return this.transactionCost;
+        return transactionCost;
     }
 
     public void setTransactionCost(Double transactionCost) {

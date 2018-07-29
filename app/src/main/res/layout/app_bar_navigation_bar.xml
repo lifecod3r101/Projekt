@@ -12,10 +12,9 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:layout_height="wrap_content"
+            android:background="#3fa1"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
     </android.support.design.widget.AppBarLayout>
     <include layout="@layout/content_navigation_bar" />
-
 </android.support.design.widget.CoordinatorLayout>

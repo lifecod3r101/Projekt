@@ -3,8 +3,7 @@ package com.developer.speed.m_pos.Services.HairCare;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView.Adapter;
-import android.support.v7.widget.RecyclerView.ViewHolder;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,13 +11,11 @@ import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.developer.speed.m_pos.R.id;
-import com.developer.speed.m_pos.R.layout;
-import com.developer.speed.m_pos.Services.HairCare.HairCareServiceAdapter.HairCareServiceViewHolder;
+import com.developer.speed.m_pos.R;
 
 import java.util.List;
 
-public class HairCareServiceAdapter extends Adapter<HairCareServiceViewHolder> {
+public class HairCareServiceAdapter extends RecyclerView.Adapter<HairCareServiceAdapter.HairCareServiceViewHolder> {
 
     Context hairCareContext;
     List<HairCareServiceProperties> hairCareServicePropertiesList;
@@ -30,14 +27,15 @@ public class HairCareServiceAdapter extends Adapter<HairCareServiceViewHolder> {
 
     @NonNull
     @Override
-    public HairCareServiceAdapter.HairCareServiceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public HairCareServiceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater hcInflater = LayoutInflater.from(parent.getContext());
-        View view = hcInflater.inflate(layout.hair_care_services_card, null);
-        return new HairCareServiceAdapter.HairCareServiceViewHolder(view);
+        View view = hcInflater.inflate(R.layout.hair_care_services_card, null);
+        return new HairCareServiceViewHolder(view);
     }
 
+
     @Override
-    public void onBindViewHolder(@NonNull HairCareServiceAdapter.HairCareServiceViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull HairCareServiceViewHolder holder, int position) {
         HairCareServiceProperties hcsProperties = this.hairCareServicePropertiesList.get(position);
         holder.hcsCode.setText(hcsProperties.getHaircareCode());
         holder.hcsName.setText(hcsProperties.getHaircareName());
@@ -62,16 +60,16 @@ public class HairCareServiceAdapter extends Adapter<HairCareServiceViewHolder> {
         return this.hairCareServicePropertiesList.size();
     }
 
-    public class HairCareServiceViewHolder extends ViewHolder {
+    public class HairCareServiceViewHolder extends RecyclerView.ViewHolder {
         CardView hcsCard;
         TextView hcsCode, hcsName, hcsPrice;
 
         public HairCareServiceViewHolder(View itemView) {
             super(itemView);
-            this.hcsCard = itemView.findViewById(id.hair_care_card);
-            this.hcsCode = itemView.findViewById(id.service_code_hc);
-            this.hcsName = itemView.findViewById(id.service_name_hc);
-            this.hcsPrice = itemView.findViewById(id.service_cost_hc);
+            this.hcsCard = itemView.findViewById(R.id.hair_care_card);
+            this.hcsCode = itemView.findViewById(R.id.service_code_hc);
+            this.hcsName = itemView.findViewById(R.id.service_name_hc);
+            this.hcsPrice = itemView.findViewById(R.id.service_cost_hc);
         }
     }
 }

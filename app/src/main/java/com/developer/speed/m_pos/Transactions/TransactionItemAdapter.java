@@ -12,11 +12,10 @@ import android.widget.TextView;
 
 import com.developer.speed.m_pos.R.id;
 import com.developer.speed.m_pos.R.layout;
-import com.developer.speed.m_pos.Transactions.TransactionItemAdapter.TransactionItemViewHolder;
 
 import java.util.List;
 
-public class TransactionItemAdapter extends Adapter<TransactionItemViewHolder> {
+public class TransactionItemAdapter extends Adapter<TransactionItemAdapter.TransactionItemViewHolder> {
     List<TransactionItemProperties> transactionItemPropertiesList;
     Context transactionContext;
 
@@ -28,14 +27,14 @@ public class TransactionItemAdapter extends Adapter<TransactionItemViewHolder> {
     @NonNull
     @Override
     public TransactionItemAdapter.TransactionItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater transactionItemInflater = LayoutInflater.from(this.transactionContext);
+        LayoutInflater transactionItemInflater = LayoutInflater.from(transactionContext);
         View view = transactionItemInflater.inflate(layout.transaction_item_card_layout, null);
-        return new TransactionItemViewHolder(view);
+        return new TransactionItemAdapter.TransactionItemViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull TransactionItemAdapter.TransactionItemViewHolder holder, int position) {
-        TransactionItemProperties transactItemProperties = this.transactionItemPropertiesList.get(position);
+        TransactionItemProperties transactItemProperties = transactionItemPropertiesList.get(position);
         holder.transactionItemCode.setText(transactItemProperties.getTransactItemCode());
         holder.transactionItemName.setText(transactItemProperties.getTransactItemName());
         holder.transactionItemTotalQuantity.setText(transactItemProperties.getTransactTotalQuantity());
@@ -44,7 +43,7 @@ public class TransactionItemAdapter extends Adapter<TransactionItemViewHolder> {
 
     @Override
     public int getItemCount() {
-        return this.transactionItemPropertiesList.size();
+        return transactionItemPropertiesList.size();
     }
 
     public class TransactionItemViewHolder extends ViewHolder {
@@ -53,11 +52,11 @@ public class TransactionItemAdapter extends Adapter<TransactionItemViewHolder> {
 
         public TransactionItemViewHolder(View itemView) {
             super(itemView);
-            this.transactionItemCard = itemView.findViewById(id.transaction_item_card);
-            this.transactionItemCode = itemView.findViewById(id.transaction_item_code);
-            this.transactionItemName = itemView.findViewById(id.transaction_item_name);
-            this.transactionItemTotalQuantity = itemView.findViewById(id.transaction_item_total_quantity);
-            this.transactionItemTotalCost = itemView.findViewById(id.transaction_item_total_cost);
+            transactionItemCard = itemView.findViewById(id.transaction_item_card);
+            transactionItemCode = itemView.findViewById(id.transaction_item_code);
+            transactionItemName = itemView.findViewById(id.transaction_item_name);
+            transactionItemTotalQuantity = itemView.findViewById(id.transaction_item_total_quantity);
+            transactionItemTotalCost = itemView.findViewById(id.transaction_item_total_cost);
         }
     }
 }

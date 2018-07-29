@@ -2,7 +2,6 @@ package com.developer.speed.m_pos.data_package_one.accessible.Sell_Items;
 
 
 import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,7 +10,6 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AlertDialog.Builder;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.View.OnLongClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -30,45 +28,45 @@ public class SellSection extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(layout.sell_layout);
+        setContentView(layout.sell_layout);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        this.itemCode = this.findViewById(id.item_code);
-        this.itemName = this.findViewById(id.item_name);
-        this.itemQuantity = this.findViewById(id.item_quantity);
-        this.itemPriceIndicator = this.findViewById(id.total_price_indicator);
-        this.nextItem = this.findViewById(id.next_item);
-        this.completeTransaction = this.findViewById(id.complete_transaction);
+        itemCode = findViewById(id.item_code);
+        itemName = findViewById(id.item_name);
+        itemQuantity = findViewById(id.item_quantity);
+        itemPriceIndicator = findViewById(id.total_price_indicator);
+        nextItem = findViewById(id.next_item);
+        completeTransaction = findViewById(id.complete_transaction);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Double itemPrice = Double.valueOf(this.itemPriceIndicator.getText().toString());
-        String quantity = this.itemQuantity.getText().toString();
+        Double itemPrice = Double.valueOf(itemPriceIndicator.getText().toString());
+        String quantity = itemQuantity.getText().toString();
         int itQty = Integer.parseInt(quantity);
         Double totalPrice = itemPrice * itQty;
-        this.itemPriceIndicator.setText("Ksh " + totalPrice);
-        this.completeTransaction.setOnClickListener(new View.OnClickListener() {
+        itemPriceIndicator.setText("Ksh " + totalPrice);
+        completeTransaction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (SellSection.this.itemCode.getText().toString().isEmpty() && SellSection.this.itemName.getText().toString().isEmpty() && SellSection.this.itemQuantity.getText().toString().isEmpty() || SellSection.this.itemCode.getText().toString().isEmpty() && SellSection.this.itemName.getText().toString().isEmpty() || SellSection.this.itemCode.getText().toString().isEmpty() || SellSection.this.itemName.getText().toString().isEmpty() || SellSection.this.itemQuantity.getText().toString().isEmpty()) {
-                    new Builder(SellSection.this.getApplicationContext()).setTitle("Required").setMessage("Sorry. Blank Fields prohibited").setNeutralButton("Ok", new OnClickListener() {
+                if (itemCode.getText().toString().isEmpty() && itemName.getText().toString().isEmpty() && itemQuantity.getText().toString().isEmpty() || itemCode.getText().toString().isEmpty() && itemName.getText().toString().isEmpty() || itemCode.getText().toString().isEmpty() || itemName.getText().toString().isEmpty() || itemQuantity.getText().toString().isEmpty()) {
+                    new Builder(SellSection.this.getApplicationContext()).setTitle("Required").setMessage("Sorry. Blank Fields prohibited").setNeutralButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
                         }
                     });
                 } else {
-                    new Builder(SellSection.this.getApplicationContext()).setTitle("Confirm").setMessage("Are you sure you want to pay?").setPositiveButton("Yes", new OnClickListener() {
+                    new Builder(SellSection.this.getApplicationContext()).setTitle("Confirm").setMessage("Are you sure you want to pay?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
                         }
-                    }).setNegativeButton("No", new OnClickListener() {
+                    }).setNegativeButton("No", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
@@ -77,11 +75,11 @@ public class SellSection extends AppCompatActivity {
                 }
             }
         });
-        this.completeTransaction.setOnLongClickListener(new OnLongClickListener() {
+        completeTransaction.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                if (SellSection.this.itemCode.getText().toString().isEmpty() && SellSection.this.itemName.getText().toString().isEmpty() && SellSection.this.itemQuantity.getText().toString().isEmpty() || SellSection.this.itemCode.getText().toString().isEmpty() && SellSection.this.itemName.getText().toString().isEmpty() || SellSection.this.itemCode.getText().toString().isEmpty() || SellSection.this.itemName.getText().toString().isEmpty() || SellSection.this.itemQuantity.getText().toString().isEmpty()) {
-                    new Builder(SellSection.this.getApplicationContext()).setTitle("Required").setMessage("Sorry. Blank Fields prohibited").setNeutralButton("Ok", new OnClickListener() {
+                if (itemCode.getText().toString().isEmpty() && itemName.getText().toString().isEmpty() && itemQuantity.getText().toString().isEmpty() || itemCode.getText().toString().isEmpty() && itemName.getText().toString().isEmpty() || itemCode.getText().toString().isEmpty() || itemName.getText().toString().isEmpty() || itemQuantity.getText().toString().isEmpty()) {
+                    new Builder(SellSection.this.getApplicationContext()).setTitle("Required").setMessage("Sorry. Blank Fields prohibited").setNeutralButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
@@ -103,14 +101,14 @@ public class SellSection extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Builder backDialog = new Builder(this.getApplicationContext());
-        backDialog.setTitle("Cancel Transaction").setMessage("Do you want to cancel this transaction and go back to the main menu?").setPositiveButton("Yes", new OnClickListener() {
+        Builder backDialog = new Builder(getApplicationContext());
+        backDialog.setTitle("Cancel Transaction").setMessage("Do you want to cancel this transaction and go back to the main menu?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 SellSection.this.startActivity(new Intent(SellSection.this, MainMenu.class));
                 dialog.dismiss();
             }
-        }).setNegativeButton("No", new OnClickListener() {
+        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/complete_list_ff_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/complete_list_ff_item_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp" />
+
+        <TextView
+            android:id="@+id/complete_list_ff_item_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp" />
+
+        <TextView
+            android:id="@+id/complete_list_ff_item_mass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp" />
+
+        <TextView
+            android:id="@+id/complete_list_ff_item_qty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp" />
+
+        <TextView
+            android:id="@+id/complete_list_ff_item_total_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp" />
+    </android.support.v7.widget.CardView>
+</LinearLayout>

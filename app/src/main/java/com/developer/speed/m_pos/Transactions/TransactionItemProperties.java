@@ -13,7 +13,7 @@ public class TransactionItemProperties {
     }
 
     public String getTransactItemCode() {
-        return transactItemCode;
+        return this.transactItemCode;
     }
 
     public void setTransactItemCode(String transactItemCode) {
@@ -21,7 +21,7 @@ public class TransactionItemProperties {
     }
 
     public String getTransactItemName() {
-        return transactItemName;
+        return this.transactItemName;
     }
 
     public void setTransactItemName(String transactItemName) {
@@ -29,7 +29,7 @@ public class TransactionItemProperties {
     }
 
     public int getTransactTotalQuantity() {
-        return transactTotalQuantity;
+        return this.transactTotalQuantity;
     }
 
     public void setTransactTotalQuantity(int transactTotalQuantity) {
@@ -37,7 +37,7 @@ public class TransactionItemProperties {
     }
 
     public double getTransactTotalCost() {
-        return transactTotalCost;
+        return this.transactTotalCost;
     }
 
     public void setTransactTotalCost(double transactTotalCost) {

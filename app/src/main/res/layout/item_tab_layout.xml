@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:scrollbars="vertical"
-    tools:context=".data_package_one.accessible.Items_Categories_Tabs.ItemCategoryDisplayer$PlaceholderFragment">
+    tools:context=".data_package_one.accessible.Items_Categories_Tabs.ItemCategoryDisplayer">
     <android.support.v7.widget.RecyclerView
         android:id="@+id/available_item_card_recycler"
         android:layout_width="match_parent"

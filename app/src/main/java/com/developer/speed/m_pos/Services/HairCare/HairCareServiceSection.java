@@ -6,15 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AlertDialog.Builder;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.developer.speed.m_pos.Main_Menu.MainMenu;
-import com.developer.speed.m_pos.R.id;
-import com.developer.speed.m_pos.R.layout;
+import com.developer.speed.m_pos.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,19 +27,19 @@ public class HairCareServiceSection extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(layout.hair_care_services_recycler);
+        setContentView(R.layout.hair_care_services_recycler);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         this.hcsProperties = new ArrayList<>();
-        this.hcsRecycler = this.findViewById(id.hc_services_recycler);
+        this.hcsRecycler = findViewById(R.id.hc_services_recycler);
         this.hcsRecycler.setHasFixedSize(true);
         this.hcsRecycler.setLayoutManager(new LinearLayoutManager(this));
         this.hcsAdapter = new HairCareServiceAdapter(this, this.hcsProperties);
         this.hcsRecycler.setAdapter(this.hcsAdapter);
-        this.hcsAdd = this.findViewById(id.hc_add);
+        this.hcsAdd = findViewById(R.id.hc_add);
     }
 
     @Override
@@ -49,7 +48,7 @@ public class HairCareServiceSection extends AppCompatActivity {
         this.hcsAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                HairCareServiceSection.this.startActivity(new Intent(HairCareServiceSection.this, HairCareServiceAdd.class));
+                startActivity(new Intent(HairCareServiceSection.this, HairCareServiceAdd.class));
             }
         });
     }
@@ -57,10 +56,10 @@ public class HairCareServiceSection extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        new Builder(this.getBaseContext()).setTitle("Confirm").setMessage("Do you want to return to the main menu?").setPositiveButton("Yes", new OnClickListener() {
+        new AlertDialog.Builder(getBaseContext()).setTitle("Confirm").setMessage("Do you want to return to the main menu?").setPositiveButton("Yes", new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                HairCareServiceSection.this.startActivity(new Intent(HairCareServiceSection.this, MainMenu.class));
+                startActivity(new Intent(HairCareServiceSection.this, MainMenu.class));
                 dialog.dismiss();
             }
         }).setNegativeButton("No", new OnClickListener() {

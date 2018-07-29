@@ -2,11 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_gravity="center"
     android:orientation="vertical"
+    android:background="#ffa1"
+    android:scrollbars="vertical"
     tools:context=".Pre_menu.Registration">
 
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/enterprise_name_wrap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="129dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/name_enterprise"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:hint="Your Business Name"
+            android:inputType="text" />
+    </android.support.design.widget.TextInputLayout>
     <android.support.design.widget.TextInputLayout
         android:id="@+id/first_name_wrap"
         android:layout_width="match_parent"
@@ -18,7 +35,7 @@
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
             android:hint="Your First Name"
-            android:inputType="textPersonName"/>
+            android:inputType="textPersonName" />
     </android.support.design.widget.TextInputLayout>
     <android.support.design.widget.TextInputLayout
         android:id="@+id/last_name_wrap"
@@ -66,7 +83,11 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
+        android:background="#3af"
+        android:drawableTint="#00f"
+        android:drawableTop="@android:drawable/ic_menu_save"
         android:text="Submit and Enter Password"/>
+
     <TableRow
         android:id="@+id/login_wrap"
         android:layout_width="match_parent"
@@ -80,7 +101,8 @@
             android:text="Account Available?Tap Here"
             android:layout_weight="1"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
-            android:clickable="true"/>
+            android:layout_marginTop="32dp"
+            android:clickable="true"
+            android:textColor="#000" />
     </TableRow>
 </LinearLayout>

@@ -8,7 +8,7 @@ public class CategoriesFragmentProperties {
     }
 
     public String getCategory() {
-        return this.category;
+        return category;
     }
 
     public void setCategory(String category) {
